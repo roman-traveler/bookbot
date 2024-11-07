@@ -1,2 +1,2 @@
-# bookbot
-A boot.dev practice project - the first one, python, git
+BookBot is my first project!
+
