@@ -1,22 +1,13 @@
-code=open("books/frankenstein.txt").read()
+from stats import count_words, count_char, report
+import sys
 
-def count_words(text):
-    return (len(text.split()))
+args = sys.argv[1:]
+if len(args) != 1:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+code=open(args[0]).read()
 
 print(count_words(code))
-
-def count_char(text):
-    chars={}
-    for value in text.lower():
-        char=value
-        chars[value] = chars.get(value, 0) + 1
-    return chars
-
 print(count_char(code))
 
-def report(code):
-    print("--- Begin report of books/frankenstein.txt ---")
-    print(f"{count_words(code)} found in the document")
-    for char,value in count_char(code).items():
-        print(f"The '{char}' character was found {value} times")
 report(code)
